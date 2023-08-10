@@ -1,0 +1,49 @@
+package L4L.TestCase;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import dd.l4l.pages.CreateCoursePage;
+import dd.l4l.pages.LoginPage;
+import dd.l4l.pages.StudentTrackerPage;
+import dd.live.base.L4LBaseclass;
+import net.bytebuddy.implementation.bind.annotation.BindingPriority;
+
+public class CreateCourseTest extends L4LBaseclass
+{
+
+	
+	LoginPage login;
+	StudentTrackerPage sttracker;
+	CreateCoursePage course;
+	
+    @Test(priority=0)
+	public void setup() throws IOException, InterruptedException
+	{
+    	initialize();
+    	login = new LoginPage();
+    	login.ddlogin(prop.getProperty("CIemail"), prop.getProperty("CIpass"));
+    	sttracker = new StudentTrackerPage(); 	
+    	course = new CreateCoursePage();
+	}
+    
+    @Test(priority=1)
+	public void navigateToCreateCourseTest()
+	{
+		boolean CreatecourseTitlecheck = course.navigateToCreateCoursePage();
+		Assert.assertTrue(CreatecourseTitlecheck);
+	}
+   
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

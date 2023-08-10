@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DataDesign]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="ListnerPackage.ListnerClass"/>
+  </listeners>
+  <test thread-count="5" name="StudentTracker(failed)">
+    <classes>
+      <class name="TestCase.SetupUserTest">
+        <methods>
+          <include name="validateGreetingPopupTest"/>
+        </methods>
+      </class> <!-- TestCase.SetupUserTest -->
+    </classes>
+  </test> <!-- StudentTracker(failed) -->
+</suite> <!-- Failed suite [DataDesign] -->

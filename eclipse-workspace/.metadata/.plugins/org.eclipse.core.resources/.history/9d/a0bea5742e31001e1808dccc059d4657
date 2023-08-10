@@ -1,0 +1,21 @@
+package dd.l4l.pages;
+
+import org.openqa.selenium.By;
+
+import dd.live.base.L4LBaseclass;
+
+public class CreateCoursePage extends L4LBaseclass
+
+{
+
+	By CandIModule = By.xpath("//span[contains(text(),'C & I Module')]");
+	By CreateCourse = By.xpath("//a[normalize-space()='Course Creation']");
+	
+	
+	
+	
+	
+	
+	
+	
+}

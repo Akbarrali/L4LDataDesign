@@ -1,0 +1,91 @@
+package practicetestcase;
+
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.time.Duration;
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
+
+import dd.util.TestUtil;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class Infogram 
+{
+	WebDriver driver;
+	
+	@Test
+	public void inforgram() throws InterruptedException
+	{
+		driver = WebDriverManager.chromedriver().create();
+		driver.get("https://infogram.com");
+		Thread.sleep(2000);
+		driver.manage().window().maximize();
+		driver.findElement(By.xpath("//a[@class='Button__StyledLinkButton-sc-28av86-1 iXWyPa']")).click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(100));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='login_name']")));
+		driver.findElement(By.id("login_name")).sendKeys("nina@datadesign.io");
+		driver.findElement(By.id("login_pass")).sendKeys("Psalm.23");
+		driver.findElement(By.id("submit-login")).click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@class='icon-user _2SxA6NesApLImgLn7pZYCt']")));
+		driver.findElement(By.xpath("//input[@placeholder='Search by name or author']")).sendKeys("L4L_REGION 2: Shellie Hanes - LP 11");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='library-list_item-title']")));
+		driver.findElement(By.xpath("//div[@class='library-list_item-title']")).click();
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//div[@class='_35yTenkUA6tkT7h1KeQ109'])[2]")));
+		driver.findElement(By.xpath("(//div[@class='_35yTenkUA6tkT7h1KeQ109'])[2]")).click();
+		driver.findElement(By.xpath("(//div[@class='_35yTenkUA6tkT7h1KeQ109'])[2]")).clear();
+		System.out.println("Clear Check");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//span[contains(text(),'REGION 2: AREA SUPERINTENDENT’S REPORT - LP 5')])[1]")));
+		 
+		WebElement reportname =driver.findElement(By.xpath("(//span[contains(text(),'REGION 2:AREA SUPERINTENDENT’S REPORT')])[1]"));
+		
+		WebElement maintext = driver.findElement(By.xpath("//div[@role='textbox']//div[@class='public-DraftStyleDefault-block public-DraftStyleDefault-ltr']"));
+		WebElement reporttext =driver.findElement(By.xpath("//span[@xpath='1']"));
+		System.out.println(reporttext.getText());
+		Actions action = new Actions(driver);
+		//action.moveToElement(reportname).doubleClick().build();
+		WebElement titlename = driver.findElement(By.xpath("//div[@Class='TitleEditor__TextBox-sc-1isvkf2-2 epedzr']"));
+		//action.moveToElement(titlename).click().perform();
+		action.doubleClick(maintext).perform();
+		//action.doubleClick(reportname).perform();
+		//reportname.clear();
+		//Thread.sleep(1000);
+		//reportname.sendKeys("REGION 1:AREA SUPERINTENDENT’S REPORT - LP 5");
+		//System.out.println(reportname.getText());
+		//String titel = reportname.getText();
+		//int lenght = titel.length();
+		//String changetitle = titel.replace("4", "5");
+		//System.out.println(changetitle);
+		Thread.sleep(5000);
+		//JavascriptExecutor js = (JavascriptExecutor) driver;  
+		//js.executeScript("document.getElementByXPath('(//span[contains(text(),'REGION 1:AREA SUPERINTENDENT’S REPORT - LP 4')])[1]').textContent = 'REGION 1:AREA SUPERINTENDENT’S REPORT - LP 5';");
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].innerText='L4L_REGION 1: Taera Childers - LP 6'", reporttext);
+		String print = reporttext.getText();
+		System.out.println(print);
+		driver.findElement(By.xpath("//div[@class='StyledToolbar-cffrym-2 dyerZm']")).click();
+		driver.findElement(By.xpath("//button[@class='Toolbarreact__DownloadButton-sc-1t0p6s8-8 iuunSe']")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//h2[@class='DownloadTabs__Title-sc-1ay49qz-2 gTXMzp'])[3]")));
+		driver.findElement(By.xpath("(//h2[@class='DownloadTabs__Title-sc-1ay49qz-2 gTXMzp'])[3]"));
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//button[@data-tooltip-position='bottom']")).click();
+		
+		
+		
+		Thread.sleep(30000);
+		
+		
+		
+	}
+	}
+	
+

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;dd.util.Xls_Reader.java&apos; to &apos;ExcelReader.java&apos;&#x0D;&#x0A;- Original project: &apos;DataDesign&apos;&#x0D;&#x0A;- Original element: &apos;dd.util.Xls_Reader.java&apos;&#x0D;&#x0A;- Renamed element: &apos;dd.util.ExcelReader.java&apos;" description="Rename compilation unit &apos;Xls_Reader.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;dd.util{Xls_Reader.java" name="ExcelReader.java" references="false" stamp="1685683637040" version="1.0"/>
+</session>

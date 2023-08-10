@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Parameterized(failed)">
+    <classes>
+      <class name="TestCase.LoginPageTest">
+        <methods>
+          <include name="loginWithBlankCredentialsTest"/>
+          <include name="logintitletest"/>
+          <include name="validateLoginUrlTest"/>
+          <include name="ddlogintest"/>
+        </methods>
+      </class> <!-- TestCase.LoginPageTest -->
+    </classes>
+  </test> <!-- Parameterized(failed) -->
+</suite> <!-- Failed suite [Suite] -->

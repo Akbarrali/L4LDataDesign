@@ -1,0 +1,22 @@
+package practicetestcase;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class ChromedrivrChange {
+
+	public static void main(String[] args) 
+	{
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.google.com/");
+		System.out.println("page title is " + driver.getTitle());
+		driver.manage().window().maximize();
+		driver.navigate().refresh();
+		driver.close();
+		
+		
+		
+		
+	}
+
+}

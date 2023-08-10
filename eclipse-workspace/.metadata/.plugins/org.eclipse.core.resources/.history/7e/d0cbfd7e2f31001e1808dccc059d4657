@@ -1,0 +1,51 @@
+package L4L.TestCase;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import dd.l4l.pages.CreateCoursePage;
+import dd.l4l.pages.LoginPage;
+import dd.l4l.pages.StudentTrackerPage;
+import dd.live.base.L4LBaseclass;
+
+public class CreateCourseTest extends L4LBaseclass
+{
+
+	
+	LoginPage login;
+	StudentTrackerPage sttracker;
+	CreateCoursePage course;
+	
+    @Test(priority=0)
+	public void setup() throws IOException, InterruptedException
+	{
+    	initialize();
+    	login = new LoginPage();
+    	login.ddlogin(prop.getProperty("ddusername"), prop.getProperty("ddpassword"));
+    	sttracker = new StudentTrackerPage(); 	
+    	course = new CreateCoursePage();
+	}
+    
+    @Test(priority=1)
+    public void validateGreetingPopupTest()
+    {
+    	boolean Greetingpopup = sttracker.validateGreetingPopup();
+    	Assert.assertTrue(Greetingpopup);
+    }
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
