@@ -1,17 +1,12 @@
 package L4L.DD.pages;
 
-import static org.testng.Assert.assertEquals;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 import DD.l4l.base.L4lBaseClass;
 import L4L.Util.DDUtil;
-import DD.l4l.base.L4lBaseClass;
-import L4L.Util.DDUtil;
 
-public class LoginPage extends L4lBaseClass
+public class TestDlogin extends L4lBaseClass
 {
 	By logo = By.xpath("//img[@alt=‘D+D’])");
     By username = By.xpath("//input[@placeholder='Username']");
@@ -52,9 +47,8 @@ public class LoginPage extends L4lBaseClass
 	
     public StudentTrackerPage ddlogin(String usr, String pass) throws InterruptedException
     {   
-    	DDUtil.explicitwait(driver, username);
-       
     	
+        DDUtil.explicitwait(driver, username);
         String user = "CI"; //prop.getProperty("role");
         switch(user)
         {
@@ -69,7 +63,7 @@ public class LoginPage extends L4lBaseClass
             DDUtil.javascriptexecutorClick(submit);
 			DDUtil.explicitwait(driver, welcometext);
         	String Welcomemsg = driver.findElement(welcometext).getText();
-        	System.out.println("Login as RIS");
+        	System.out.println(Welcomemsg);
             break;
         case "Teacher":
         	driver.findElement(username).sendKeys(usr);
@@ -79,9 +73,9 @@ public class LoginPage extends L4lBaseClass
 			WebElement Techloginbutton = driver.findElement(login);
             DDUtil.javascriptexecutorClick(Techloginbutton);
 			DDUtil.explicitwait(driver, GreetingPopup);
-        	//String GreetingP = driver.findElement(GreetingPopCloseButton).getText();
+        	String GreetingP = driver.findElement(GreetingPopCloseButton).getText();
         	driver.findElement(GreetingPopCloseButton).click();
-        	System.out.println("Login as Teacher");
+        	System.out.println(GreetingP);
             break;
        default : 
             driver.findElement(username).sendKeys(usr);
@@ -91,12 +85,13 @@ public class LoginPage extends L4lBaseClass
 			WebElement submitll = driver.findElement(login);
             DDUtil.javascriptexecutorClick(submitll);
 			DDUtil.explicitwait(driver, GreetingPopup);
-        	//String GreetingP1= driver.findElement(GreetingPopCloseButton).getText();
+        	String GreetingP1= driver.findElement(GreetingPopCloseButton).getText();
         	driver.findElement(GreetingPopCloseButton).click();
-        	
+        	System.out.println(GreetingP1);
             break;
         }
-              
+        
+       
         return new StudentTrackerPage();
     	
     }

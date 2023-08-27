@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -49,12 +50,24 @@ public class DDUtil extends L4lBaseClass{
     }
 	
 	
-	public static WebDriver javascriptexecutorClick(WebElement checkbox)
+	public static WebDriver javascriptexecutorClick(WebElement element)
 	{
-		
-		
-		jsexecutor.executeScript("arguments[0].click();", checkbox);
+		jsexecutor.executeScript("arguments[0].click();", element);
 		return driver;
+	}
+	
+
+	public static WebElement javascriptExecutorScroll(WebElement element)
+	{
+		jsexecutor.executeScript("arguments[0].scrollIntoView();", element);
+		return element;		
+	}
+	
+	public static WebElement drawBorderJS(WebDriver driver, WebElement element)
+	{
+		//jsexecutor.executeScript("arguments[0].style.border='3px solid read';", element);
+		jsexecutor.executeScript("arguments[0].style.border = 4px + ' solid ' + red;", element);
+        return element;		
 	}
 	
 	
@@ -65,20 +78,13 @@ public class DDUtil extends L4lBaseClass{
 	}
 
 
-	public static WebDriver javascriptExecutorScroll(WebElement scroll)
-	{
-		
-		jsexecutor.executeScript("arguments[0].scrollIntoView();", scroll);
-		return driver;
-		
-	}
 	
 	
 	public static void screenshot() throws IOException
 	{
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 	
-		FileUtils.copyFile(src, new File("C:\\Users\\AKBARALI\\eclipse-workspace\\DataDesign\\Screenshots\\Screenshot.png"));
+		FileUtils.copyFile(src, new File("C:\\Users\\akbarali\\L4LDataDesign\\DDST\\Screenshots\\Screenshot.png"));
 	
 	    
 	}	

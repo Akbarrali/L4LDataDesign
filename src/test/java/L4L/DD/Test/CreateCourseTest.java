@@ -26,9 +26,12 @@ public class CreateCourseTest extends L4lBaseClass
 	{
     	initialize();
     	login = new LoginPage();
-    	login.ddlogin(prop.getProperty("CIemail"), prop.getProperty("CIpass"));
+    	//login.ddlogin(prop.getProperty("CIemail"), prop.getProperty("CIpass"));
+    	login.ddlogin(prop.getProperty("ddusername"), prop.getProperty("ddpassword"));
     	sttracker = new StudentTrackerPage(); 	
     	course = new CreateCoursePage();
+    	
+    	
 	}
     
     @Test(priority=1)

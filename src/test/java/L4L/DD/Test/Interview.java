@@ -41,6 +41,7 @@ public class Interview {
 		System.out.println("page title is " + driver.getTitle());
 		//Common Command
 		driver.manage().window().maximize();
+		driver.navigate().refresh();
 		//driver.findElement(By.linkText("I'm Feeling Lucky")).click();
 		WebElement tes = driver.findElement(By.xpath("(//input[@class='RNmpXc'])[2]"));
 		System.out.println(driver.getTitle());
@@ -65,8 +66,10 @@ public class Interview {
 		//Fatch the common locator for all the dropdown options
 		
 		List<WebElement> dropdown = driver.findElements(By.xpath(null));
-		int totaloption = dropdown.size();
-		dropdown.get(0).click();
+		dropdown.size();
+		
+		
+		
 		
 		//Windows Authantication Popup
 		//We just need to enter the username and password in url 
@@ -78,6 +81,8 @@ public class Interview {
 		//isenable - check filed is enable or not
 		
 		//Javascript Executor : Is use for click, Scroll by coordinate, Scroll by Element, 
+		                        //Insert text, Draw borderline on element, Get title of page,  
+		                        // Generate Alert Pop Window
 		
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		
@@ -85,7 +90,8 @@ public class Interview {
 		
 		js.executeScript("arguments[0].scollIntoView();", dropdown);
 		
-		//Keys Check : SendKeys is a method where all the mouse keys methods are store.
+		//Keys Check : 
+		//SendKeys is a method where all the mouse keys methods are store.
 		
 		driver.findElement(null).sendKeys(Keys.ENTER);
 
@@ -144,10 +150,10 @@ public class Interview {
 		   driver.switchTo().alert().dismiss();
 		   driver.switchTo().alert().getText();
 		   driver.switchTo().alert().sendKeys("Test");
-		   driver.switchTo().alert().accept();
+		  
 		   
 		// Screenshots : To take screenshot we need to Common IO dependancy in pom.xml file
-		   //There is methos Takescreenshot
+		   //There is methods Takescreenshot
 		   
 		   
 	    // Assertion : Hard Assertion and Soft Assertion

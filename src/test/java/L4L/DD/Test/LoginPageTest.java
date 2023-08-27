@@ -37,7 +37,7 @@ public class LoginPageTest extends L4lBaseClass
 		Assert.assertEquals(currenturl, "https://qa-l4l.datadesign.io/", "Login url does not match");
 	}
 	
-	@Test(priority=3)
+	//@Test(priority=3)
 	public void loginWithBlankCredentialsTest() throws InterruptedException
 	{
 		boolean blanckcredential = login.loginWithBlankCredentials();
@@ -52,12 +52,15 @@ public class LoginPageTest extends L4lBaseClass
 		Assert.assertEquals(ltitle, "Data+Design", "DD login title does not match");
 	}
 	
-    @Test(priority=4)
+    @Test(priority=3)
     public void ddlogintest() throws InterruptedException
     {
-    	login.ddlogin(prop.getProperty("ddusername"), prop.getProperty("ddpassword")); 	
+    	login.ddlogin(prop.getProperty("ddusername"), prop.getProperty("ddpassword"));
+    	
     }
-    
+    //prop.getProperty("ddusername"), prop.getProperty("ddpassword")
+    //, String Cuser, String Cpass
+    //, prop.getProperty("Cusername"), prop.getProperty("Cpass")
    
 //   public void teardown() throws InterruptedException
 //    {

@@ -5,7 +5,7 @@
     <classes>
       <class name="L4L.DD.Test.LoginPageTest">
         <methods>
-          <include name="loginWithBlankCredentialsTest"/>
+          <include name="ddlogintest"/>
         </methods>
       </class> <!-- L4L.DD.Test.LoginPageTest -->
     </classes>
