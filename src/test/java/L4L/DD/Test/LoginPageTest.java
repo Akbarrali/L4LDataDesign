@@ -9,9 +9,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.HTMLReporter;
+
 
 import DD.l4l.base.L4lBaseClass;
 import DD.l4l.base.L4lBaseClass;
@@ -58,10 +56,7 @@ public class LoginPageTest extends L4lBaseClass
     	login.ddlogin(prop.getProperty("ddusername"), prop.getProperty("ddpassword"));
     	
     }
-    //prop.getProperty("ddusername"), prop.getProperty("ddpassword")
-    //, String Cuser, String Cpass
-    //, prop.getProperty("Cusername"), prop.getProperty("Cpass")
-   
+    
 //   public void teardown() throws InterruptedException
 //    {
 //    	

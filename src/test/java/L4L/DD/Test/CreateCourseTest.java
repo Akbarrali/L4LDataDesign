@@ -9,14 +9,11 @@ import DD.l4l.base.L4lBaseClass;
 import L4L.DD.pages.CreateCoursePage;
 import L4L.DD.pages.LoginPage;
 import L4L.DD.pages.StudentTrackerPage;
-import L4L.Util.DDUtil;
 
-//import net.bytebuddy.implementation.bind.annotation.BindingPriority;
 
 public class CreateCourseTest extends L4lBaseClass
 {
 
-	
 	LoginPage login;
 	StudentTrackerPage sttracker;
 	CreateCoursePage course;
@@ -29,20 +26,21 @@ public class CreateCourseTest extends L4lBaseClass
     	//login.ddlogin(prop.getProperty("CIemail"), prop.getProperty("CIpass"));
     	login.ddlogin(prop.getProperty("ddusername"), prop.getProperty("ddpassword"));
     	sttracker = new StudentTrackerPage(); 	
-    	course = new CreateCoursePage();
-    	
-    	
+    	course = new CreateCoursePage();  	
 	}
     
     @Test(priority=1)
-	public void navigateToCreateCourseTest()
+	public void navigateToCreateCourseTest() throws IOException
 	{
 		boolean CreatecourseTitlecheck = course.navigateToCreateCoursePage();
 		Assert.assertTrue(CreatecourseTitlecheck);
 	}
    
-	
-	
+    @Test(dependsOnMethods = { "navigateToCreateCourseTest" })
+    public void fillCourseDetailsTest() throws InterruptedException
+    {
+    	course.fillCourseDetails();
+    }
 	
 	
 	

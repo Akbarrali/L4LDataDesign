@@ -4,6 +4,11 @@
 
 <suite name="Suite">
 
+   <listeners>
+     <listener class-name="ListnerPacket.ExtentReportsClass"></listener>
+     <listener class-name="ListnerPacket.ListnerClass"></listener>
+  </listeners>
+
     <test name="DDStudentTracker">
         <classes>
         <class name="L4L.DD.Test.LoginPageTest"></class>

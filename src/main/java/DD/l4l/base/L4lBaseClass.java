@@ -2,24 +2,26 @@ package DD.l4l.base;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.lang.module.ModuleDescriptor.Exports;
 import java.time.Duration;
 import java.util.Properties;
+
+import javax.naming.ldap.ExtendedRequest;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.reporters.HtmlHelper;
 
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
-import com.relevantcodes.extentreports.HTMLReporter;
+
 
 public class L4lBaseClass 
 {
 	public Properties prop;
 	public static WebDriver driver;
-	public static HTMLReporter httmlreport;
-	public static ExtentReports report;
-	public static ExtentTest reporttest;
+	public static HtmlHelper httmlreport;
+	public static Exports report;
+	public static ExtendedRequest reporttest;
 	
 	
 	public WebDriver initialize() throws IOException

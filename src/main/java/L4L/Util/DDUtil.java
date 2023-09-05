@@ -27,12 +27,11 @@ public class DDUtil extends L4lBaseClass{
 	
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 10;
-	
+	public static Actions action = new Actions(driver);
 	public static JavascriptExecutor jsexecutor = (JavascriptExecutor) driver;
 	
-	//static WebDriver driver;
 	
-	
+	//Explicitwait Wait
 	public static WebElement explicitwait(WebDriver driver, By locator) 
 	{
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(IMPLICIT_WAIT));
@@ -49,47 +48,60 @@ public class DDUtil extends L4lBaseClass{
         return element;
     }
 	
-	
-	public static WebDriver javascriptexecutorClick(WebElement element)
+	//JavaScriptExecutor Click 
+	public static WebElement javascriptexecutorClick(WebElement element)
 	{
 		jsexecutor.executeScript("arguments[0].click();", element);
-		return driver;
+		return element;
 	}
 	
-
+	//JavaScriptExecutor Scroll 
 	public static WebElement javascriptExecutorScroll(WebElement element)
 	{
 		jsexecutor.executeScript("arguments[0].scrollIntoView();", element);
 		return element;		
 	}
 	
+	//JavaScriptExecutor DrawLine
 	public static WebElement drawBorderJS(WebDriver driver, WebElement element)
 	{
-		//jsexecutor.executeScript("arguments[0].style.border='3px solid read';", element);
-		jsexecutor.executeScript("arguments[0].style.border = 4px + ' solid ' + red;", element);
+		jsexecutor.executeScript("arguments[0].style.border='3px solid red'", element);
         return element;		
 	}
 	
 	
-	public static void actionclasshover(WebElement hover)
-	{
-		Actions action = new Actions(driver);
-		action.moveToElement(hover).build().perform();
+
+	
+	
+	//Action Class Hover
+	public static void actionclasshover(WebElement element)
+	{		
+		action.moveToElement(element).build().perform();		
 	}
 
-
+	
+	//Action Class Click 
+	public static WebElement actionClassClick(WebElement element)
+	{		
+		action.moveToElement(element).click().perform();
+		return element;
+	}
 	
 	
-	public static void screenshot() throws IOException
+	//Screenshot
+	public static void screenshotOfWebpage() throws IOException
 	{
-		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-	
-		FileUtils.copyFile(src, new File("C:\\Users\\akbarali\\L4LDataDesign\\DDST\\Screenshots\\Screenshot.png"));
-	
-	    
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
+		FileUtils.copyFile(src, new File("Screenshot.png"));	    
 	}	
 	
-	
+	public static void screenshotOfElement(By locator, String srt) throws IOException
+	{
+		WebElement element = driver.findElement(locator);
+		File src = element.getScreenshotAs(OutputType.FILE);
+		File trg = new File((System.getProperty("user.dir") + "/Screenshots/" + srt));
+		FileUtils.copyFile(src, trg);
+	}
 	
 	
 }

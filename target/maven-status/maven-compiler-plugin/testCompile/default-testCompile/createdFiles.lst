@@ -3,6 +3,7 @@ L4L\DD\Test\SMSTranslatingTest.class
 L4L\DD\Test\LearningplanTest.class
 L4L\DD\Test\LoginPageTest.class
 L4L\DD\Test\StudentListSMSTest.class
+JavaProg\ConditionalProgram.class
 L4L\DD\Test\StudentProfileTest.class
 L4L\DD\Test\TranslatingTextInEmailTest.class
 L4L\DD\Test\AddStudentINRosterTest.class
@@ -14,4 +15,7 @@ L4L\DD\Test\StudentListEmailTest.class
 L4L\DD\Test\CreateCourseTest.class
 L4L\DD\Test\StudentTrackerTest.class
 L4L\DD\Test\EnrollStudentTest.class
+L4L\DD\Test\Interview.class
+JavaProg\StrManipulation.class
+JavaProg\Exception.class
 L4L\DD\Test\HDLoginTest.class

@@ -22,7 +22,7 @@ public class Exception {
 		
 		DDUtil.drawBorderJS(driver, login);
 		
-		DDUtil.screenshot();
+		//DDUtil.screenshot();
 		
 		
 		
