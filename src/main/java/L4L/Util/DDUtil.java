@@ -88,13 +88,14 @@ public class DDUtil extends L4lBaseClass{
 	}
 	
 	
-	//Screenshot
+	//Screenshot of webpage
 	public static void screenshotOfWebpage() throws IOException
 	{
 		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);	
 		FileUtils.copyFile(src, new File("Screenshot.png"));	    
 	}	
 	
+	//Screenshot of webelement
 	public static void screenshotOfElement(By locator, String srt) throws IOException
 	{
 		WebElement element = driver.findElement(locator);

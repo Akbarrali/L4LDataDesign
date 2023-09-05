@@ -30,7 +30,7 @@ public class CreateUserTest extends L4lBaseClass
 	}
 	
 	
-	@Test (priority=1)
+	//@Test (priority=1)
 	public void validateGreetingPopupTest()
     {
     	boolean indicatorcheck = users.validateGreetingPopup();

@@ -28,7 +28,7 @@ public class L4lBaseClass
 	{
 		
 		prop = new Properties();
-		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\dd\\excel\\utility\\data.properties");
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\L4L\\config\\data.properties");
 		prop.load(fis);	
 		
 		String browsername = prop.getProperty("browser");

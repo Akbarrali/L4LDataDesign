@@ -12,6 +12,7 @@
     <test name="DDStudentTracker">
         <classes>
         <class name="L4L.DD.Test.LoginPageTest"></class>
+        <class name="L4L.DD.Test.CreateCourseTest"></class>
         </classes>    
     </test>
 </suite> 
