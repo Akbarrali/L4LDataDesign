@@ -35,7 +35,8 @@ public class AddAppointmentPage extends L4lBaseClass
 	By ActionAllbutton = By.xpath("//i[@class='anticon anticon-appstore']");
 	By successValidation = By.xpath("//span[contains(text(),'Appointment added successfully')]");
 	By AddButton = By.xpath("//div[@class='ant-modal-footer']//button[1]");
-
+	By CloseGreetingPopup = By.xpath("(//button[@class='ant-btn'])[2]");
+	
 	
 	public boolean clickOnEventActionButton()
 	{
@@ -82,6 +83,26 @@ public class AddAppointmentPage extends L4lBaseClass
  		Thread.sleep(3000);
  		DDUtil.explicitwait(driver, successValidation);
  		return driver.findElement(successValidation).isDisplayed();
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
+ 		
  		
  		
  	

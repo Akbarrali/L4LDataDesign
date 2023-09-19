@@ -24,7 +24,7 @@ public class LoginPageTest extends L4lBaseClass
 	@Test(priority=0)
 	public void setup() throws IOException {
 	    initialize();
-		login = new L4L.DD.pages.LoginPage();
+		login = new LoginPage();
 		
 	}
 	

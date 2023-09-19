@@ -62,7 +62,7 @@ public class StrManipulation
 	public static void main(String[] args)
 	{ 
 		//StrManipulation.revstr();
-		//StrManipulation.stmethods();
+		StrManipulation.stmethods();
 		//StrManipulation.rmv();
 		StrManipulation.tes();
 //		String srt = "Automation";

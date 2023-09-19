@@ -21,8 +21,8 @@ public class LoginPage extends L4lBaseClass
     By welcometext = By.xpath("//h1[@class='welcome-text']");
     By loginuser = By.xpath("//span[contains(text(),'Regular Test')]");
     By TechLoginuser = By.xpath("//span[@class='dd-username']");
-    By GreetingPopup = By.xpath("//div[@class='ant-result-extra']");
-    By GreetingPopCloseButton = By.xpath("//span[contains(text(),'Close')]");
+    By GreetingPopup = By.xpath("//div[@class='ant-result ant-result-info splash-wrapper']");
+    By GreetingPopCloseButton = By.xpath("/(//button[@class='ant-btn'])[2]");
     
     public String verifyLoginUrl()
     {
@@ -43,8 +43,7 @@ public class LoginPage extends L4lBaseClass
     	DDUtil.explicitwait(driver, login);
     	return driver.findElement(usernamevalidaton).isDisplayed(); 		
 	}
-  
-	
+    
 	public String validatetitel()
 	{
 		return driver.getTitle();	
@@ -54,8 +53,7 @@ public class LoginPage extends L4lBaseClass
     {   
     	DDUtil.explicitwait(driver, username);
        
-    	
-        String user = "CI"; //prop.getProperty("role");
+        String user = "Teacher";
         switch(user)
         {
         case "CI": 
@@ -78,9 +76,9 @@ public class LoginPage extends L4lBaseClass
             Thread.sleep(2000);
 			WebElement Techloginbutton = driver.findElement(login);
             DDUtil.javascriptexecutorClick(Techloginbutton);
-			DDUtil.explicitwait(driver, GreetingPopup);
-        	//String GreetingP = driver.findElement(GreetingPopCloseButton).getText();
-        	driver.findElement(GreetingPopCloseButton).click();
+			DDUtil.explicitwait(driver, GreetingPopCloseButton);
+        	WebElement closepopup = driver.findElement(GreetingPopCloseButton);
+        	DDUtil.javascriptexecutorClick(closepopup);
         	System.out.println("Login as Teacher");
             break;
        default : 

@@ -29,13 +29,15 @@ public class StudentTrackerPage extends L4lBaseClass
 	By SMSPopupTitle = By.xpath("//div[contains(text(),'SMS')]");
 	By selectstudent = By.xpath("(//input[@name='32'])[2]");
 	By followupbutton = By.xpath("(//button[@class='ant-btn ant-btn-primary']//span)[1]");
+	By GreetingPop = By.xpath("//div[@class='ant-result ant-result-info splash-wrapper']");
 	
 
 	
 	
-	public boolean validateGreetingPopup()
+	public boolean validateGreetingPopup() throws InterruptedException
 	{
-		DDUtil.explicitwait(driver, CloseGreetingPopup);
+		Thread.sleep(2000);
+		DDUtil.explicitwait(driver, GreetingPop);
 		driver.findElement(CloseGreetingPopup).click();
 		DDUtil.explicitwait(driver, followupbutton);
 		boolean districcheck = driver.findElement(followupbutton).isDisplayed();

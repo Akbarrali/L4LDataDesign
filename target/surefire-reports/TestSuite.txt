@@ -1,4 +1,25 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 50.18 s - in TestSuite
+Tests run: 8, Failures: 3, Errors: 0, Skipped: 1, Time elapsed: 62.97 s <<< FAILURE! - in TestSuite
+L4L.DD.Test.CreateCourseTest.setup  Time elapsed: 9.904 s  <<< FAILURE!
+org.openqa.selenium.StaleElementReferenceException: 
+stale element reference: stale element not found
+  (Session info: chrome=116.0.5845.182)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.11.0', revision: '040bc5406b'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4abb9671660277fab9dab5bc9e6f0765, executeScript {script=arguments[0].click();, args=[{element-6066-11e4-a52e-4f735466cecf=A3FE28EDED9C43396FA2C69ACDF240BA_element_33}]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 116.0.5845.182, chrome: {chromedriverVersion: 116.0.5845.96 (1a3918166880..., userDataDir: C:\Users\akbarali\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62149}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62149/devtoo..., se:cdpVersion: 116.0.5845.182, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 4abb9671660277fab9dab5bc9e6f0765
+	at L4L.DD.Test.CreateCourseTest.setup(CreateCourseTest.java:27)
+
+L4L.DD.Test.CreateCourseTest.navigateToCreateCourseTest  Time elapsed: 0 s  <<< FAILURE!
+java.lang.NullPointerException
+	at L4L.DD.Test.CreateCourseTest.navigateToCreateCourseTest(CreateCourseTest.java:35)
+
+L4L.DD.Test.CreateCourseTest.addnewCourseCatalogTest  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.NullPointerException
+	at L4L.DD.Test.CreateCourseTest.addnewCourseCatalogTest(CreateCourseTest.java:48)
+

@@ -28,7 +28,7 @@ public class CreateCourseTest extends L4lBaseClass
     	sttracker = new StudentTrackerPage(); 	
     	course = new CreateCoursePage();  	
 	}
-    
+     
     @Test(priority=1)
 	public void navigateToCreateCourseTest() throws IOException
 	{
@@ -39,14 +39,14 @@ public class CreateCourseTest extends L4lBaseClass
     @Test(dependsOnMethods = { "navigateToCreateCourseTest" })
     public void fillCourseDetailsTest() throws InterruptedException
     {
-    	course.fillCourseDetails();
+    	course.fillCourseDetailsPage();
     }
 	
-	
-	
-	
-	
-	
-	
-	
+    @Test(priority = 2)
+    public void addnewCourseCatalogTest() throws InterruptedException
+    {
+    	course.addNewCourseCatalogPage();
+    }
+    
+
 }

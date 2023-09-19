@@ -29,7 +29,7 @@ public class LearningplanTest extends L4lBaseClass
 	}
 	    
 	@Test(priority=2)
-	public void validateGreetingPopupTest()
+	public void validateGreetingPopupTest() throws InterruptedException
     {
     	boolean Greetingpopup = sttracker.validateGreetingPopup();
     	Assert.assertTrue(Greetingpopup);

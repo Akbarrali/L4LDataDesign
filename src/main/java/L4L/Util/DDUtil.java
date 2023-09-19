@@ -25,8 +25,8 @@ import DD.l4l.base.L4lBaseClass;
 public class DDUtil extends L4lBaseClass{
 	
 	
-	public static long PAGE_LOAD_TIMEOUT = 20;
-	public static long IMPLICIT_WAIT = 10;
+	public static int PAGE_LOAD_TIMEOUT = 20;
+	public static int IMPLICIT_WAIT = 10;
 	public static Actions action = new Actions(driver);
 	public static JavascriptExecutor jsexecutor = (JavascriptExecutor) driver;
 	

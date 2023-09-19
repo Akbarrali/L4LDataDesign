@@ -3,12 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="L4L.DD.Test.CreateCourseTest">
+      <class name="L4L.DD.Test.AddAppointmentTest">
         <methods>
-          <include name="fillCourseDetailsTest"/>
-          <include name="navigateToCreateCourseTest"/>
+          <include name="actionbartest"/>
+          <include name="selectcheckboxtest"/>
+          <include name="studentTrackerabeltest"/>
+          <include name="clickOnEventActionButtonTest"/>
+          <include name="addAppointmentTest"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- L4L.DD.Test.CreateCourseTest -->
+      </class> <!-- L4L.DD.Test.AddAppointmentTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
